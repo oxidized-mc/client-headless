@@ -107,7 +107,6 @@ async fn main() -> anyhow::Result<()> {
 ## Documentation
 
 - [Architecture Overview](docs/architecture/overview.md)
-- [Architecture Decision Records](docs/adr/)
 - [Implementation Phases](docs/phases/README.md)
 - [Contributing](CONTRIBUTING.md)
 

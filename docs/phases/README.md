@@ -14,18 +14,17 @@ Phases are ordered by dependency — each phase builds on the previous ones.
 | 4 | Login & Authentication | Planned |
 | 5 | NBT Library | Planned |
 | 6 | Configuration Phase | Planned |
-| 7 | Core Types | Planned |
-| 8 | Play Phase Entry | Planned |
-| 9 | Chunk Receiving & Storage | Planned |
-| 10 | Entity Tracking | Planned |
-| 11 | Player Movement | Planned |
-| 12 | Chat | Planned |
-| 13 | Bot API & Event System | Planned |
-| 14 | Inventory Management | Planned |
-| 15 | Block Interaction | Planned |
-| 16 | Combat | Planned |
-| 17 | Pathfinding | Planned |
-| 18 | Multi-Client Support | Planned |
+| 7 | Play Phase Entry | Planned |
+| 8 | Chunk Receiving & Storage | Planned |
+| 9 | Entity Tracking | Planned |
+| 10 | Player Movement | Planned |
+| 11 | Chat | Planned |
+| 12 | Bot API & Event System | Planned |
+| 13 | Inventory Management | Planned |
+| 14 | Block Interaction | Planned |
+| 15 | Combat | Planned |
+| 16 | Pathfinding | Planned |
+| 17 | Multi-Client Support | Planned |
 
 ## Phase Dependencies
 
@@ -36,15 +35,15 @@ Phase 1 (Bootstrap)
             └─ Phase 4 (Login/Auth)
                  ├─ Phase 5 (NBT)
                  └─ Phase 6 (Configuration)
-                      └─ Phase 8 (Play Entry)
-                           ├─ Phase 9 (Chunks)
-                           ├─ Phase 10 (Entities)
-                           ├─ Phase 11 (Movement)
-                           └─ Phase 12 (Chat)
-                                └─ Phase 13 (Bot API)
-                                     ├─ Phase 14 (Inventory)
-                                     ├─ Phase 15 (Block Interaction)
-                                     ├─ Phase 16 (Combat)
-                                     └─ Phase 17 (Pathfinding)
-                                          └─ Phase 18 (Multi-Client)
+                      └─ Phase 7 (Play Entry)
+                           ├─ Phase 8 (Chunks)
+                           ├─ Phase 9 (Entities)
+                           ├─ Phase 10 (Movement)
+                           └─ Phase 11 (Chat)
+                                └─ Phase 12 (Bot API)
+                                     ├─ Phase 13 (Inventory)
+                                     ├─ Phase 14 (Block Interaction)
+                                     ├─ Phase 15 (Combat)
+                                     └─ Phase 16 (Pathfinding)
+                                          └─ Phase 17 (Multi-Client)
 ```

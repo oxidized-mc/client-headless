@@ -165,9 +165,9 @@ Use `ci` for workflow files, `deps` for dependency updates.
 
 ```
 feat(protocol): implement VarInt read/write
-fix(client): correct session token refresh logic
-perf(world): cache chunk sections to avoid recomputation
-test(nbt): add round-trip tests for all 13 tag types
+fix: correct session token refresh logic
+perf: cache chunk sections to avoid recomputation
+test(protocol): add NBT round-trip tests for all 13 tag types
 chore(deps): bump tokio from 1.43 to 1.44
 ```
 
