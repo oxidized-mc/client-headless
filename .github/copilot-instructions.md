@@ -167,6 +167,22 @@ grep -r "old_name" . --include="*.rs" --include="*.toml" --include="*.md"
 
 Framework-level decisions that affect all code. All ADRs in `docs/adr/`.
 
+| ADR | Decision |
+|-----|----------|
+| [001] | 3-crate layered architecture: macros → protocol → headlesscraft |
+| [002] | `thiserror` everywhere (library — no `anyhow` in production) |
+| [003] | Tokio async runtime for network I/O and multi-client concurrency |
+| [004] | `tracing` for structured logging; library never installs a subscriber |
+| [005] | Derive macros (`McEncode`/`McDecode`) for packet codec framework |
+| [006] | Typestate pattern for client connection lifecycle |
+| [007] | Layered codec stack: framing → compression → encryption |
+| [008] | NBT as module within protocol crate (not separate crate) |
+| [009] | Pluggable `Authenticator` trait with Microsoft OAuth built-in |
+| [010] | Flat data structures for client world state (no ECS) |
+| [011] | Trait-based `EventHandler` with channel fallback |
+| [012] | Shared runtime + shared immutable data for multi-client |
+| [013] | Full test pyramid: unit, proptest, compliance, snapshot, integration |
+
 Read the phase doc's "Architecture Decisions" section for domain-specific ADRs.
 **New ADR when:** new crate/public trait, choosing between approaches, expensive-to-reverse decision.
 **Lifecycle:** Proposed → Accepted → Superseded. Never edit accepted — create a superseding one.
@@ -181,3 +197,19 @@ Format: `<type>(<scope>): <description>`
 **Types:** `feat` (minor), `fix` (patch), `perf` (patch), `refactor`, `test`, `docs`, `chore`, `ci`
 **Scopes:** `macros`, `protocol`, `ci`, `deps`
 **Breaking:** `feat!:` + `BREAKING CHANGE:` in body. No `Co-authored-by:` trailers.
+
+---
+
+[001]: ../docs/adr/adr-001-crate-architecture.md
+[002]: ../docs/adr/adr-002-error-handling.md
+[003]: ../docs/adr/adr-003-async-runtime.md
+[004]: ../docs/adr/adr-004-logging-observability.md
+[005]: ../docs/adr/adr-005-packet-codec.md
+[006]: ../docs/adr/adr-006-connection-lifecycle.md
+[007]: ../docs/adr/adr-007-encryption-compression.md
+[008]: ../docs/adr/adr-008-nbt-design.md
+[009]: ../docs/adr/adr-009-authentication.md
+[010]: ../docs/adr/adr-010-client-world-state.md
+[011]: ../docs/adr/adr-011-event-system.md
+[012]: ../docs/adr/adr-012-multi-client.md
+[013]: ../docs/adr/adr-013-testing-strategy.md
