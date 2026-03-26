@@ -26,13 +26,9 @@
 ## Workspace & Crate Dependencies
 
 ```
-headlesscraft-types     ← no internal deps (shared coordinate types)
-headlesscraft-nbt       ← no internal deps
 headlesscraft-macros    ← no internal deps (proc-macro)
-headlesscraft-protocol  ← types, nbt, macros
-headlesscraft-world     ← types, nbt
-headlesscraft-client    ← protocol, world, nbt
-headlesscraft           ← client (public facade, re-exports)
+headlesscraft-protocol  ← macros (packets, codecs, NBT, types, wire format)
+headlesscraft           ← protocol, macros (client logic, world state, bot API)
 ```
 
 **Never let a lower-layer crate import a higher-layer crate.**
@@ -183,5 +179,5 @@ This repo uses [Conventional Commits](https://www.conventionalcommits.org/) for 
 
 Format: `<type>(<scope>): <description>`
 **Types:** `feat` (minor), `fix` (patch), `perf` (patch), `refactor`, `test`, `docs`, `chore`, `ci`
-**Scopes:** `types`, `nbt`, `macros`, `protocol`, `world`, `client`, `ci`, `deps`
+**Scopes:** `macros`, `protocol`, `ci`, `deps`
 **Breaking:** `feat!:` + `BREAKING CHANGE:` in body. No `Co-authored-by:` trailers.

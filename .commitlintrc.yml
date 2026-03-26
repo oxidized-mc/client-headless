@@ -26,12 +26,8 @@ rules:
   scope-enum:
     - 2
     - always
-    - - nbt
-      - macros
+    - - macros
       - protocol
-      - world
-      - client
-      - types
       - ci
       - deps
   scope-case:

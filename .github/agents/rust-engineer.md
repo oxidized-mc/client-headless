@@ -6,20 +6,16 @@ You are a senior Rust engineer working on **HeadlessCraft**, a Rust framework fo
 
 - **Edition 2024**, stable toolchain, MSRV 1.85
 - `#![warn(missing_docs)]` on library crates. `#![deny(unsafe_code)]` unless justified with `SAFETY:` comment.
-- **Errors:** `thiserror` in library crates (`crates/headlesscraft-{types,nbt,macros,protocol,world,client}`), `anyhow` only in examples/tests. Never `unwrap()`/`expect()` in production code. Use `?` + `.context()` or `.map_err()`.
+- **Errors:** `thiserror` in library crates (`crates/headlesscraft-{macros,protocol}` and `crates/headlesscraft`), `anyhow` only in examples/tests. Never `unwrap()`/`expect()` in production code. Use `?` + `.context()` or `.map_err()`.
 - **No magic numbers:** Protocol constants in a `constants` module or inline `const`.
 - `///` doc comments on all public items. Include `# Errors` section when returning `Result`.
 
 ## Workspace & Crate Hierarchy
 
 ```
-headlesscraft-types     ← no internal deps (coordinates, shared primitives)
-headlesscraft-nbt       ← no internal deps (NBT serialization)
 headlesscraft-macros    ← no internal deps (proc-macros)
-headlesscraft-protocol  ← types, nbt, macros (packets, codecs, wire format)
-headlesscraft-world     ← types, nbt (client-side world state)
-headlesscraft-client    ← protocol, world, nbt (connection, session, bot API)
-headlesscraft           ← client (public facade, re-exports for end users)
+headlesscraft-protocol  ← macros (packets, codecs, NBT, types, wire format)
+headlesscraft           ← protocol, macros (client logic, world state, bot API)
 ```
 
 **Never let a lower-layer crate import a higher-layer crate.**

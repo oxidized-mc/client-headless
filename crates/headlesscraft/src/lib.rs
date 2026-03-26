@@ -4,8 +4,7 @@
 //!
 //! HeadlessCraft connects to vanilla servers, handles the full protocol lifecycle
 //! (handshake → login → configuration → play), and exposes a high-level API for
-//! building bots, testing tools, stress testers, protocol analyzers, and proxy
-//! frameworks.
+//! building bots, testing tools, stress testers, and automation.
 //!
 //! ## Quick Start
 //!
@@ -25,23 +24,16 @@
 //! }
 //! ```
 //!
-//! ## Crate Re-exports
+//! ## Modules
 //!
-//! This crate re-exports the most commonly needed types from the workspace:
-//!
-//! - [`headlesscraft_types`] — Coordinate types and shared primitives
-//! - [`headlesscraft_nbt`] — NBT serialization
-//! - [`headlesscraft_protocol`] — Packet definitions and codecs
-//! - [`headlesscraft_world`] — Client-side world state
-//! - [`headlesscraft_client`] — Connection, session, and bot API
+//! - [`protocol`] — Re-export of `headlesscraft-protocol` (packets, codecs, NBT, types)
+//! - `client` — Connection management, authentication, session handling (TODO)
+//! - `world` — Client-side world state tracking (TODO)
+//! - `bot` — High-level bot behavior API (TODO)
 #![warn(missing_docs)]
 #![deny(unsafe_code)]
 
-pub use headlesscraft_client as client;
-pub use headlesscraft_nbt as nbt;
 pub use headlesscraft_protocol as protocol;
-pub use headlesscraft_types as types;
-pub use headlesscraft_world as world;
 
 /// Placeholder for the high-level `Client` builder.
 ///

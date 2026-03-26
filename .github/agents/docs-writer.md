@@ -58,7 +58,7 @@ Update after phases or when discovering gotchas. Format: append findings with da
 - **HeadlessCraft** = Rust framework for headless Minecraft Java Edition clients
 - **Protocol:** MC 26.1 (version `775`, world `4786`)
 - **Philosophy:** Wire-compatible with vanilla servers, idiomatic Rust internals, ergonomic API
-- **Crates:** types, nbt, macros, protocol, world, client, headlesscraft (facade)
+- **Crates:** macros, protocol, headlesscraft (main library)
 
 ## What You Do
 
