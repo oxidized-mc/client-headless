@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Roadmap
+    url: https://github.com/dodoflix/HeadlessCraft/blob/main/docs/phases/README.md
+    about: Implementation roadmap
+  - name: 💬 Discussions
+    url: https://github.com/dodoflix/HeadlessCraft/discussions
+    about: General questions and community chat
