@@ -1,0 +1,28 @@
+[package]
+name        = "headlesscraft-world"
+description = "Client-side world representation for HeadlessCraft"
+version.workspace      = true
+edition.workspace      = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+rust-version.workspace = true
+
+[dependencies]
+headlesscraft-types = { workspace = true }
+headlesscraft-nbt   = { workspace = true }
+bytes      = { workspace = true }
+thiserror  = { workspace = true }
+serde      = { workspace = true }
+ahash      = { workspace = true }
+parking_lot = { workspace = true }
+dashmap    = { workspace = true }
+tracing    = { workspace = true }
+bitflags   = { workspace = true }
+
+[dev-dependencies]
+proptest   = { workspace = true }
+tempfile   = { workspace = true }
+
+[lints]
+workspace = true

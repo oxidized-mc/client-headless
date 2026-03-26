@@ -1,0 +1,19 @@
+[package]
+name        = "headlesscraft-types"
+description = "Shared coordinate types and primitives for HeadlessCraft"
+version.workspace      = true
+edition.workspace      = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+rust-version.workspace = true
+
+[dependencies]
+glam      = { workspace = true }
+serde     = { workspace = true }
+
+[dev-dependencies]
+proptest  = { workspace = true }
+
+[lints]
+workspace = true

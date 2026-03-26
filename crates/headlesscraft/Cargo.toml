@@ -1,0 +1,25 @@
+[package]
+name        = "headlesscraft"
+description = "A Rust framework for headless Minecraft Java Edition clients — bots, testing, and automation"
+version.workspace      = true
+edition.workspace      = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+homepage.workspace     = true
+rust-version.workspace = true
+
+[dependencies]
+headlesscraft-types    = { workspace = true }
+headlesscraft-nbt      = { workspace = true }
+headlesscraft-protocol = { workspace = true }
+headlesscraft-world    = { workspace = true }
+headlesscraft-client   = { workspace = true }
+
+[dev-dependencies]
+tokio      = { workspace = true }
+anyhow     = { workspace = true }
+proptest   = { workspace = true }
+
+[lints]
+workspace = true

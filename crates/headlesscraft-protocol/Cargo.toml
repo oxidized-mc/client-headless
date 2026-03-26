@@ -1,0 +1,39 @@
+[package]
+name        = "headlesscraft-protocol"
+description = "Minecraft protocol codec and packet definitions for HeadlessCraft"
+version.workspace      = true
+edition.workspace      = true
+authors.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+rust-version.workspace = true
+
+[dependencies]
+headlesscraft-types  = { workspace = true }
+headlesscraft-nbt    = { workspace = true }
+headlesscraft-macros = { workspace = true }
+bytes       = { workspace = true }
+tokio       = { workspace = true }
+tokio-util  = { workspace = true }
+thiserror   = { workspace = true }
+serde       = { workspace = true }
+serde_json  = { workspace = true }
+indexmap     = { workspace = true }
+uuid        = { workspace = true }
+aes         = { workspace = true }
+md-5        = { workspace = true }
+rsa         = { workspace = true }
+rand        = { workspace = true }
+sha1        = { workspace = true }
+sha2        = { workspace = true }
+flate2      = { workspace = true }
+tracing     = { workspace = true }
+bitflags    = { workspace = true }
+
+[dev-dependencies]
+proptest    = { workspace = true }
+insta       = { workspace = true }
+tempfile    = { workspace = true }
+
+[lints]
+workspace = true
