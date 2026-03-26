@@ -11,7 +11,7 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
-- 7-crate Cargo workspace (headlesscraft, client, protocol, nbt, world, macros, types)
+- 3-crate Cargo workspace (headlesscraft, protocol, macros)
 - Repository scaffolding (licenses MIT/Apache-2.0, CONTRIBUTING, CI)
 - Rust tooling (rustfmt, clippy, cargo-deny, rust-toolchain)
 - Copilot agents and prompts for development workflow

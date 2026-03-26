@@ -576,28 +576,13 @@ checksum = "841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100"
 name = "headlesscraft"
 version = "0.1.0"
 dependencies = [
- "anyhow",
- "headlesscraft-client",
- "headlesscraft-nbt",
- "headlesscraft-protocol",
- "headlesscraft-types",
- "headlesscraft-world",
- "proptest",
- "tokio",
-]
-
-[[package]]
-name = "headlesscraft-client"
-version = "0.1.0"
-dependencies = [
  "ahash",
  "anyhow",
+ "bytes",
  "dashmap",
  "glam",
- "headlesscraft-nbt",
+ "headlesscraft-macros",
  "headlesscraft-protocol",
- "headlesscraft-types",
- "headlesscraft-world",
  "insta",
  "parking_lot",
  "proptest",
@@ -626,18 +611,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "headlesscraft-nbt"
-version = "0.1.0"
-dependencies = [
- "bytes",
- "flate2",
- "proptest",
- "serde",
- "tempfile",
- "thiserror 2.0.18",
-]
-
-[[package]]
 name = "headlesscraft-protocol"
 version = "0.1.0"
 dependencies = [
@@ -645,9 +618,8 @@ dependencies = [
  "bitflags",
  "bytes",
  "flate2",
+ "glam",
  "headlesscraft-macros",
- "headlesscraft-nbt",
- "headlesscraft-types",
  "indexmap",
  "insta",
  "md-5",
@@ -664,33 +636,6 @@ dependencies = [
  "tokio-util",
  "tracing",
  "uuid",
-]
-
-[[package]]
-name = "headlesscraft-types"
-version = "0.1.0"
-dependencies = [
- "glam",
- "proptest",
- "serde",
-]
-
-[[package]]
-name = "headlesscraft-world"
-version = "0.1.0"
-dependencies = [
- "ahash",
- "bitflags",
- "bytes",
- "dashmap",
- "headlesscraft-nbt",
- "headlesscraft-types",
- "parking_lot",
- "proptest",
- "serde",
- "tempfile",
- "thiserror 2.0.18",
- "tracing",
 ]
 
 [[package]]

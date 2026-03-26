@@ -30,19 +30,26 @@ and exposes a high-level API for building:
 
 ## Architecture
 
-HeadlessCraft is a Cargo workspace with layered crates:
+HeadlessCraft is a Cargo workspace with 3 crates:
 
 ```
-headlesscraft-types     ← no internal deps (coordinates, block IDs, shared primitives)
-headlesscraft-nbt       ← no internal deps (NBT serialization)
 headlesscraft-macros    ← no internal deps (proc-macros)
-headlesscraft-protocol  ← types, nbt, macros (packets, codecs, wire format)
-headlesscraft-world     ← types, nbt (client-side world representation)
-headlesscraft-client    ← protocol, world, nbt (connection, session, bot API)
-headlesscraft           ← client (public facade, re-exports for end users)
+headlesscraft-protocol  ← macros (packets, codecs, NBT, types, wire format)
+headlesscraft           ← protocol, macros (client logic, world state, bot API)
 ```
 
 Lower-layer crates never depend on higher-layer crates.
+
+Modules within `headlesscraft` (the main crate) handle:
+- **client** — connection management, authentication, session handling
+- **world** — client-side world state (chunks, entities, biomes)
+- **bot** — high-level bot behavior API and event system
+
+Modules within `headlesscraft-protocol` handle:
+- **packets** — all packet definitions for every connection state
+- **codec** — VarInt/VarLong, framing, encryption, compression
+- **nbt** — Named Binary Tag serialization
+- **types** — shared coordinate types, block IDs, protocol primitives
 
 ## Quick Start
 

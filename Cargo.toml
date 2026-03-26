@@ -1,12 +1,8 @@
 [workspace]
 members = [
     "crates/headlesscraft",
-    "crates/headlesscraft-client",
     "crates/headlesscraft-protocol",
-    "crates/headlesscraft-nbt",
-    "crates/headlesscraft-world",
     "crates/headlesscraft-macros",
-    "crates/headlesscraft-types",
 ]
 resolver = "2"
 
@@ -79,11 +75,7 @@ criterion      = { version = "0.5", features = ["html_reports"] }
 
 # Internal workspace crates
 headlesscraft-protocol = { path = "crates/headlesscraft-protocol" }
-headlesscraft-nbt      = { path = "crates/headlesscraft-nbt" }
-headlesscraft-world    = { path = "crates/headlesscraft-world" }
-headlesscraft-client   = { path = "crates/headlesscraft-client" }
 headlesscraft-macros   = { path = "crates/headlesscraft-macros" }
-headlesscraft-types    = { path = "crates/headlesscraft-types" }
 
 [profile.release]
 opt-level     = 3

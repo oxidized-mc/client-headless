@@ -96,17 +96,17 @@ cargo install cargo-watch   # auto-rebuild on save
 
 ## Architecture
 
-The workspace has seven crates — keep concerns separated:
+The workspace has three crates — keep concerns separated:
 
 | Crate | Responsibility | Must NOT depend on |
 |---|---|---|
-| `headlesscraft-types` | Coordinates, shared primitives | all other headlesscraft crates |
-| `headlesscraft-nbt` | NBT binary format | all other headlesscraft crates |
 | `headlesscraft-macros` | Proc-macro derives | all other headlesscraft crates |
-| `headlesscraft-protocol` | Packet codec, connection state | `headlesscraft-world`, `headlesscraft-client` |
-| `headlesscraft-world` | Client-side world state | `headlesscraft-protocol`, `headlesscraft-client` |
-| `headlesscraft-client` | Connection, session, bot API | — |
-| `headlesscraft` | Public facade, re-exports | — (depends on all) |
+| `headlesscraft-protocol` | Packet codec, NBT, types, wire format | `headlesscraft` |
+| `headlesscraft` | Client logic, world state, bot API | — (depends on protocol, macros) |
+
+Modules within the main `headlesscraft` crate handle client connection, world state,
+and bot behavior. Modules within `headlesscraft-protocol` handle packets, codecs,
+NBT serialization, and shared types.
 
 **Reference code:** The decompiled vanilla client/server lives in `mc-server-ref/decompiled/`
 (gitignored). When implementing something, always check the Java reference first.
@@ -158,7 +158,7 @@ All commits **must** follow [Conventional Commits](https://www.conventionalcommi
 
 ### Scopes
 
-Use the crate name as scope: `nbt`, `macros`, `protocol`, `world`, `client`, `types`.
+Use the crate name as scope: `macros`, `protocol`.
 Use `ci` for workflow files, `deps` for dependency updates.
 
 ### Examples

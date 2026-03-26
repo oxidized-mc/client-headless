@@ -11,12 +11,9 @@ You are a strict code reviewer for **HeadlessCraft**, a Rust framework for headl
 
 ### Crate Hierarchy
 ```
-headlesscraft-types → headlesscraft-nbt → headlesscraft-macros
-       ↓               ↓              ↓
-headlesscraft-protocol ← types, nbt, macros
-headlesscraft-world    ← types, nbt
-headlesscraft-client   ← protocol, world, nbt
-headlesscraft          ← client (facade)
+headlesscraft-macros    ← no internal deps (proc-macros)
+headlesscraft-protocol  ← macros (packets, codecs, NBT, types)
+headlesscraft           ← protocol, macros (client logic, world state, bot API)
 ```
 **Flag any lower-layer crate importing a higher-layer crate.**
 

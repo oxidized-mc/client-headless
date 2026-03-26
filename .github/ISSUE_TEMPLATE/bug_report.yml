@@ -14,10 +14,8 @@ body:
       label: Affected crate
       options:
         - headlesscraft
-        - headlesscraft-client
         - headlesscraft-protocol
-        - headlesscraft-nbt
-        - headlesscraft-world
+        - headlesscraft-macros
         - Unknown / multiple
     validations:
       required: true

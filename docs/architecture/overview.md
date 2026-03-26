@@ -7,14 +7,21 @@ a high-level API for bots, testing tools, and automation.
 ## Crate Layout
 
 ```
-headlesscraft-types     ← Coordinates, block IDs, shared primitives
-headlesscraft-nbt       ← NBT (Named Binary Tag) serialization
 headlesscraft-macros    ← Proc-macro derives (packet codecs, etc.)
-headlesscraft-protocol  ← Packet definitions, VarInt codec, encryption, compression
-headlesscraft-world     ← Client-side world state (chunks, entities, biomes)
-headlesscraft-client    ← Connection management, session handling, bot API
-headlesscraft           ← Public facade crate (re-exports for end users)
+headlesscraft-protocol  ← Packet definitions, VarInt codec, encryption, compression, NBT, types
+headlesscraft           ← Client logic, world state, bot API (the main library)
 ```
+
+Modules within `headlesscraft-protocol`:
+- **packets** — all packet definitions for every connection state
+- **codec** — VarInt/VarLong, framing, encryption, compression
+- **nbt** — Named Binary Tag serialization (13 tag types)
+- **types** — shared coordinate types, block IDs, protocol primitives
+
+Modules within `headlesscraft` (main crate):
+- **client** — connection management, authentication, session handling
+- **world** — client-side world state (chunks, entities, biomes)
+- **bot** — high-level bot behavior API and event system
 
 ## Design Principles
 
