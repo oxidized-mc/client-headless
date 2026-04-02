@@ -5,9 +5,6 @@
 # Cargo lock is committed for the workspace
 # Cargo.lock  ← intentionally kept
 
-# Minecraft reference files (large, not needed in git)
-/mc-server-ref/
-
 # IDE
 .idea/
 .vscode/settings.json
