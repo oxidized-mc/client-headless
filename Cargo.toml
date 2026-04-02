@@ -71,8 +71,8 @@ serial_test    = "3"
 criterion      = { version = "0.5", features = ["html_reports"] }
 
 # Internal workspace crates
-headlesscraft-protocol = { path = "crates/headlesscraft-protocol" }
-headlesscraft-macros   = { path = "crates/headlesscraft-macros" }
+headlesscraft-protocol = { path = "crates/headlesscraft-protocol", version = "=0.1.0" }
+headlesscraft-macros   = { path = "crates/headlesscraft-macros", version = "=0.1.0" }
 
 [profile.release]
 opt-level     = 3
