@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: 📖 Roadmap
-    url: https://github.com/dodoflix/HeadlessCraft/blob/main/docs/phases/README.md
+    url: https://github.com/oxidized-mc/client-headless
     about: Implementation roadmap
   - name: 💬 Discussions
     url: https://github.com/dodoflix/HeadlessCraft/discussions

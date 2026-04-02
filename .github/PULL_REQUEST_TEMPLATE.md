@@ -61,5 +61,4 @@
 - [ ] **Checked:** Are any existing ADRs outdated given this change?
 - [ ] **Checked:** Could any existing patterns be improved?
 - [ ] **Checked:** Are there stale references (renamed items, moved files, changed APIs)?
-- [ ] **Checked:** Were any learnings discovered that should be added to [memories.md](.github/memories.md)?
-- [ ] Any identified improvements are recorded (memories.md, new issue, or new ADR)
+- [ ] Any identified improvements are recorded (new issue or new ADR)

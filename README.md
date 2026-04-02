@@ -106,8 +106,6 @@ async fn main() -> anyhow::Result<()> {
 
 ## Documentation
 
-- [Architecture Overview](docs/architecture/overview.md)
-- [Implementation Phases](docs/phases/README.md)
 - [Contributing](CONTRIBUTING.md)
 
 ## License
