@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 📖 Roadmap
+  - name: 📖 Project
     url: https://github.com/oxidized-mc/client-headless
-    about: Implementation roadmap
+    about: Project overview and status
   - name: 💬 Discussions
     url: https://github.com/dodoflix/HeadlessCraft/discussions
     about: General questions and community chat

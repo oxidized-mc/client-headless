@@ -46,19 +46,16 @@
 - [ ] No hardcoded magic numbers — use named constants
 - [ ] CHANGELOG.md updated if user-visible change
 
-## ADR Compliance
+## Architecture Compliance
 
-<!-- Verify this change respects existing architecture decisions. -->
+<!-- Verify this change respects existing architecture. -->
 
-- [ ] Reviewed relevant ADRs linked in the phase document
-- [ ] Implementation follows the decisions in those ADRs
 - [ ] Crate dependency rules are respected (no upward imports)
 
 ## Continuous Improvement
 
 <!-- Every PR is an opportunity to make the project better. -->
 
-- [ ] **Checked:** Are any existing ADRs outdated given this change?
 - [ ] **Checked:** Could any existing patterns be improved?
 - [ ] **Checked:** Are there stale references (renamed items, moved files, changed APIs)?
-- [ ] Any identified improvements are recorded (new issue or new ADR)
+- [ ] Any identified improvements are recorded (new issue or PR)
