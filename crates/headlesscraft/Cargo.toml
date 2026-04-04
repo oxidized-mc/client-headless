@@ -12,6 +12,14 @@ rust-version.workspace = true
 [dependencies]
 headlesscraft-protocol = { workspace = true }
 headlesscraft-macros   = { workspace = true }
+
+# Shared oxidized-mc crates (client logic layer)
+oxidized-transport = { workspace = true }
+oxidized-auth      = { workspace = true }
+oxidized-registry  = { workspace = true }
+oxidized-types     = { workspace = true }
+
+# Async runtime & networking
 tokio       = { workspace = true }
 tokio-util  = { workspace = true }
 thiserror   = { workspace = true }
@@ -22,6 +30,8 @@ tracing     = { workspace = true }
 uuid        = { workspace = true }
 reqwest     = { workspace = true }
 urlencoding = { workspace = true }
+
+# Data structures
 ahash       = { workspace = true }
 parking_lot = { workspace = true }
 dashmap     = { workspace = true }

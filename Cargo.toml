@@ -16,6 +16,18 @@ homepage     = "https://github.com/dodoflix/HeadlessCraft"
 rust-version = "1.85"
 
 [workspace.dependencies]
+# Shared oxidized-mc crate ecosystem
+oxidized-nbt         = { version = "0.1" }
+oxidized-codec       = { version = "0.1" }
+oxidized-mc-types    = { version = "0.1" }
+oxidized-chat        = { version = "0.1" }
+oxidized-crypto      = { version = "0.1" }
+oxidized-compression = { version = "0.1" }
+oxidized-transport   = { version = "0.1" }
+oxidized-auth        = { version = "0.1" }
+oxidized-types       = { version = "0.1" }
+oxidized-registry    = { version = "0.1" }
+
 # Async runtime
 tokio          = { version = "1", features = ["full"] }
 tokio-util     = { version = "0.7", features = ["codec"] }
@@ -24,16 +36,6 @@ tokio-util     = { version = "0.7", features = ["codec"] }
 serde          = { version = "1", features = ["derive"] }
 serde_json     = { version = "1", features = ["preserve_order"] }
 bytes          = "1"
-
-# Crypto
-aes            = "0.8"
-rsa            = { version = "0.9", features = ["sha2", "getrandom"] }
-rand           = "0.10"
-sha1           = "0.10"
-sha2           = "0.10"
-
-# Compression
-flate2         = "1"
 
 # Logging/tracing
 tracing             = "0.1"
@@ -73,6 +75,18 @@ criterion      = { version = "0.5", features = ["html_reports"] }
 # Internal workspace crates
 headlesscraft-protocol = { path = "crates/headlesscraft-protocol", version = "=0.1.0" }
 headlesscraft-macros   = { path = "crates/headlesscraft-macros", version = "=0.1.0" }
+
+[patch.crates-io]
+oxidized-nbt         = { path = "../nbt" }
+oxidized-codec       = { path = "../codec" }
+oxidized-mc-types    = { path = "../mc-types" }
+oxidized-chat        = { path = "../chat" }
+oxidized-crypto      = { path = "../crypto" }
+oxidized-compression = { path = "../compression" }
+oxidized-transport   = { path = "../transport" }
+oxidized-auth        = { path = "../auth" }
+oxidized-types       = { path = "../types" }
+oxidized-registry    = { path = "../registry" }
 
 [profile.release]
 opt-level     = 3
