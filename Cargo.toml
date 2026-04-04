@@ -76,36 +76,6 @@ criterion      = { version = "0.5", features = ["html_reports"] }
 headlesscraft-protocol = { path = "crates/headlesscraft-protocol", version = "=0.1.0" }
 headlesscraft-macros   = { path = "crates/headlesscraft-macros", version = "=0.1.0" }
 
-[patch."https://github.com/oxidized-mc/nbt.git"]
-oxidized-nbt = { path = "../nbt" }
-
-[patch."https://github.com/oxidized-mc/codec.git"]
-oxidized-codec = { path = "../codec" }
-
-[patch."https://github.com/oxidized-mc/mc-types.git"]
-oxidized-mc-types = { path = "../mc-types" }
-
-[patch."https://github.com/oxidized-mc/chat.git"]
-oxidized-chat = { path = "../chat" }
-
-[patch."https://github.com/oxidized-mc/crypto.git"]
-oxidized-crypto = { path = "../crypto" }
-
-[patch."https://github.com/oxidized-mc/compression.git"]
-oxidized-compression = { path = "../compression" }
-
-[patch."https://github.com/oxidized-mc/transport.git"]
-oxidized-transport = { path = "../transport" }
-
-[patch."https://github.com/oxidized-mc/auth.git"]
-oxidized-auth = { path = "../auth" }
-
-[patch."https://github.com/oxidized-mc/types.git"]
-oxidized-types = { path = "../types" }
-
-[patch."https://github.com/oxidized-mc/registry.git"]
-oxidized-registry = { path = "../registry" }
-
 [profile.release]
 opt-level     = 3
 lto           = "thin"
@@ -146,3 +116,34 @@ must_use_candidate      = "allow"
 cast_possible_truncation = "allow"
 cast_sign_loss           = "allow"
 cast_possible_wrap       = "allow"
+
+[patch."https://github.com/oxidized-mc/nbt.git"]
+oxidized-nbt = { path = "../nbt" }
+
+[patch."https://github.com/oxidized-mc/codec.git"]
+oxidized-codec = { path = "../codec" }
+
+[patch."https://github.com/oxidized-mc/mc-types.git"]
+oxidized-mc-types = { path = "../mc-types" }
+
+[patch."https://github.com/oxidized-mc/chat.git"]
+oxidized-chat = { path = "../chat" }
+
+[patch."https://github.com/oxidized-mc/crypto.git"]
+oxidized-crypto = { path = "../crypto" }
+
+[patch."https://github.com/oxidized-mc/compression.git"]
+oxidized-compression = { path = "../compression" }
+
+[patch."https://github.com/oxidized-mc/transport.git"]
+oxidized-transport = { path = "../transport" }
+
+[patch."https://github.com/oxidized-mc/auth.git"]
+oxidized-auth = { path = "../auth" }
+
+[patch."https://github.com/oxidized-mc/types.git"]
+oxidized-types = { path = "../types" }
+
+[patch."https://github.com/oxidized-mc/registry.git"]
+oxidized-registry = { path = "../registry" }
+
