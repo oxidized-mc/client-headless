@@ -8,10 +8,8 @@ on:
 
 jobs:
   publish:
-    if: >
-      github.event.workflow_run.conclusion == 'success' &&
-      !contains(github.event.workflow_run.head_commit.message, 'chore: release') &&
-      !contains(github.event.workflow_run.head_commit.message, 'chore(release)')
+    # Temporarily disabled — pending refactor before public release
+    if: false
     uses: oxidized-mc/ci/.github/workflows/cargo-publish-dev.yml@main
     with:
       packages: |
