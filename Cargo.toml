@@ -17,16 +17,16 @@ rust-version = "1.85"
 
 [workspace.dependencies]
 # Shared oxidized-mc crate ecosystem
-oxidized-nbt         = { version = "0.1" }
-oxidized-codec       = { version = "0.1" }
-oxidized-mc-types    = { version = "0.1" }
-oxidized-chat        = { version = "0.1" }
-oxidized-crypto      = { version = "0.1" }
-oxidized-compression = { version = "0.1" }
-oxidized-transport   = { version = "0.1" }
-oxidized-auth        = { version = "0.1" }
-oxidized-types       = { version = "0.1" }
-oxidized-registry    = { version = "0.1" }
+oxidized-nbt         = { git = "https://github.com/oxidized-mc/nbt.git" }
+oxidized-codec       = { git = "https://github.com/oxidized-mc/codec.git" }
+oxidized-mc-types    = { git = "https://github.com/oxidized-mc/mc-types.git" }
+oxidized-chat        = { git = "https://github.com/oxidized-mc/chat.git" }
+oxidized-crypto      = { git = "https://github.com/oxidized-mc/crypto.git" }
+oxidized-compression = { git = "https://github.com/oxidized-mc/compression.git" }
+oxidized-transport   = { git = "https://github.com/oxidized-mc/transport.git" }
+oxidized-auth        = { git = "https://github.com/oxidized-mc/auth.git" }
+oxidized-types       = { git = "https://github.com/oxidized-mc/types.git" }
+oxidized-registry    = { git = "https://github.com/oxidized-mc/registry.git" }
 
 # Async runtime
 tokio          = { version = "1", features = ["full"] }
@@ -76,17 +76,35 @@ criterion      = { version = "0.5", features = ["html_reports"] }
 headlesscraft-protocol = { path = "crates/headlesscraft-protocol", version = "=0.1.0" }
 headlesscraft-macros   = { path = "crates/headlesscraft-macros", version = "=0.1.0" }
 
-[patch.crates-io]
-oxidized-nbt         = { path = "../nbt" }
-oxidized-codec       = { path = "../codec" }
-oxidized-mc-types    = { path = "../mc-types" }
-oxidized-chat        = { path = "../chat" }
-oxidized-crypto      = { path = "../crypto" }
+[patch."https://github.com/oxidized-mc/nbt.git"]
+oxidized-nbt = { path = "../nbt" }
+
+[patch."https://github.com/oxidized-mc/codec.git"]
+oxidized-codec = { path = "../codec" }
+
+[patch."https://github.com/oxidized-mc/mc-types.git"]
+oxidized-mc-types = { path = "../mc-types" }
+
+[patch."https://github.com/oxidized-mc/chat.git"]
+oxidized-chat = { path = "../chat" }
+
+[patch."https://github.com/oxidized-mc/crypto.git"]
+oxidized-crypto = { path = "../crypto" }
+
+[patch."https://github.com/oxidized-mc/compression.git"]
 oxidized-compression = { path = "../compression" }
-oxidized-transport   = { path = "../transport" }
-oxidized-auth        = { path = "../auth" }
-oxidized-types       = { path = "../types" }
-oxidized-registry    = { path = "../registry" }
+
+[patch."https://github.com/oxidized-mc/transport.git"]
+oxidized-transport = { path = "../transport" }
+
+[patch."https://github.com/oxidized-mc/auth.git"]
+oxidized-auth = { path = "../auth" }
+
+[patch."https://github.com/oxidized-mc/types.git"]
+oxidized-types = { path = "../types" }
+
+[patch."https://github.com/oxidized-mc/registry.git"]
+oxidized-registry = { path = "../registry" }
 
 [profile.release]
 opt-level     = 3
