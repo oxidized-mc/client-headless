@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: oxidized-mc/ci/.github/actions/strip-patches@main
 
       - name: Install Rust (MSRV)
         uses: dtolnay/rust-toolchain@1.85
@@ -48,6 +49,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v6
+      - uses: oxidized-mc/ci/.github/actions/strip-patches@main
 
       - name: Install Rust (stable)
         uses: dtolnay/rust-toolchain@stable
@@ -74,6 +76,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: oxidized-mc/ci/.github/actions/strip-patches@main
       - uses: EmbarkStudios/cargo-deny-action@v2
         with:
           command: check
@@ -83,6 +86,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: oxidized-mc/ci/.github/actions/strip-patches@main
       - uses: dtolnay/rust-toolchain@1.85
       - name: Cache cargo
         uses: actions/cache@v5

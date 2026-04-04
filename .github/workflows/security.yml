@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: oxidized-mc/ci/.github/actions/strip-patches@main
 
       - name: Install Rust (stable)
         uses: dtolnay/rust-toolchain@stable
