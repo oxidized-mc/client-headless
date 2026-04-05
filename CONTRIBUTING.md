@@ -72,11 +72,11 @@ rustup update stable
 cargo build
 
 # 4. Run tests
-cargo test --workspace
+cargo test
 
 # 5. Check formatting and lints
 cargo fmt --check
-cargo clippy --workspace --all-targets -- -D warnings
+cargo clippy --all-targets -- -D warnings
 ```
 
 ### Useful tools (optional)
@@ -91,17 +91,10 @@ cargo install cargo-watch   # auto-rebuild on save
 
 ## Architecture
 
-The workspace has three crates — keep concerns separated:
-
-| Crate | Responsibility | Must NOT depend on |
-|---|---|---|
-| `oxidized-client-headless-macros` | Proc-macro derives | all other oxidized-client-headless crates |
-| `oxidized-client-headless-protocol` | Packet codec, NBT, types, wire format | `oxidized-client-headless` |
-| `oxidized-client-headless` | Client logic, world state, bot API | — (depends on protocol, macros) |
-
-Modules within the main `oxidized-client-headless` crate handle client connection, world state,
-and bot behavior. Modules within `oxidized-client-headless-protocol` handle packets, codecs,
-NBT serialization, and shared types.
+oxidized-client-headless is a single crate. Low-level protocol primitives (codec, NBT, types,
+chat, crypto, compression, transport, auth) are provided by the shared
+[oxidized-mc](https://github.com/oxidized-mc) crate ecosystem. This crate focuses on
+client-specific logic: connection management, world state, and bot behavior.
 
 **Reference code:** The decompiled vanilla client/server lives in `mc-server-ref/decompiled/`
 (gitignored). When implementing something, always check the Java reference first.
@@ -140,16 +133,16 @@ All commits **must** follow [Conventional Commits](https://www.conventionalcommi
 
 ### Scopes
 
-Use the crate name as scope: `macros`, `protocol`.
+Use a descriptive scope when relevant (e.g., `client`, `world`, `bot`).
 Use `ci` for workflow files, `deps` for dependency updates.
 
 ### Examples
 
 ```
-feat(protocol): implement VarInt read/write
+feat(client): implement connection builder
 fix: correct session token refresh logic
 perf: cache chunk sections to avoid recomputation
-test(protocol): add NBT round-trip tests for all 13 tag types
+test: add NBT round-trip tests for all 13 tag types
 chore(deps): bump tokio from 1.43 to 1.44
 ```
 
@@ -178,7 +171,7 @@ Reviews are not just about catching bugs — they actively seek improvements:
 ## Testing
 
 - **Unit tests** live next to the code in `#[cfg(test)]` modules
-- **Integration tests** live in `crates/<name>/tests/`
+- **Integration tests** live in `tests/`
 - All public API must have at least one test
 - Test modules use `#[allow(clippy::unwrap_used, clippy::expect_used)]` for assertion-like code
 - Reference the Java behaviour when writing expected values:
@@ -195,7 +188,7 @@ cargo nextest run --workspace
 ### Benchmarks
 
 [Criterion](https://github.com/bheisler/criterion.rs) benchmarks live in
-`crates/<crate>/benches/`. Run the full suite:
+`benches/`. Run the full suite:
 
 ```bash
 cargo bench --workspace

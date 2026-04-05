@@ -14,8 +14,6 @@ body:
       label: Affected crate
       options:
         - oxidized-client-headless
-        - oxidized-client-headless-protocol
-        - oxidized-client-headless-macros
         - Unknown / multiple
     validations:
       required: true

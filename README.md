@@ -30,26 +30,14 @@ and exposes a high-level API for building:
 
 ## Architecture
 
-oxidized-client-headless is a Cargo workspace with 3 crates:
+oxidized-client-headless is a single Rust crate. Low-level protocol primitives (codec, NBT,
+types, chat, crypto, compression, transport, auth) are provided by the shared
+[oxidized-mc](https://github.com/oxidized-mc) crate ecosystem. This crate focuses on
+client-specific logic:
 
-```
-oxidized-client-headless-macros    ← no internal deps (proc-macros)
-oxidized-client-headless-protocol  ← macros (packets, codecs, NBT, types, wire format)
-oxidized-client-headless           ← protocol, macros (client logic, world state, bot API)
-```
-
-Lower-layer crates never depend on higher-layer crates.
-
-Modules within `oxidized-client-headless` (the main crate) handle:
 - **client** — connection management, authentication, session handling
 - **world** — client-side world state (chunks, entities, biomes)
 - **bot** — high-level bot behavior API and event system
-
-Modules within `oxidized-client-headless-protocol` handle:
-- **packets** — all packet definitions for every connection state
-- **codec** — VarInt/VarLong, framing, encryption, compression
-- **nbt** — Named Binary Tag serialization
-- **types** — shared coordinate types, block IDs, protocol primitives
 
 ## Quick Start
 
@@ -64,10 +52,10 @@ cd client-headless
 cargo build
 
 # Run tests
-cargo test --workspace
+cargo test
 
 # Check lints
-cargo clippy --workspace --all-targets -- -D warnings
+cargo clippy --all-targets -- -D warnings
 ```
 
 ### Use as a dependency

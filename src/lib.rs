@@ -36,18 +36,8 @@
 //!     Ok(())
 //! }
 //! ```
-//!
-//! ## Modules
-//!
-//! - [`protocol`] — Re-export of `oxidized-client-headless-protocol` (packets, codecs, NBT, types, chat)
-//! - `client` — Connection management, authentication, session handling (TODO)
-//! - `world` — Client-side world state tracking (TODO)
-//! - `bot` — High-level bot behavior API (TODO)
 #![warn(missing_docs)]
 #![deny(unsafe_code)]
-
-/// Protocol layer — packets, codecs, NBT, types, chat.
-pub use oxidized_client_headless_protocol as protocol;
 
 /// Placeholder for the high-level `Client` builder.
 ///

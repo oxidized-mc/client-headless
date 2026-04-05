@@ -1,21 +1,15 @@
-[workspace]
-members = [
-    "crates/oxidized-client-headless",
-    "crates/oxidized-client-headless-protocol",
-    "crates/oxidized-client-headless-macros",
-]
-resolver = "2"
-
-[workspace.package]
-version      = "0.1.0" # x-release-please-version
-edition      = "2024"
-authors      = ["Dogukan Metan <dogukanmetan@gmail.com>"]
-license      = "MIT"
-repository   = "https://github.com/oxidized-mc/client-headless"
-homepage     = "https://github.com/oxidized-mc/client-headless"
+[package]
+name        = "oxidized-client-headless"
+description = "A Rust framework for headless Minecraft Java Edition clients — bots, testing, and automation"
+version     = "0.1.0" # x-release-please-version
+edition     = "2024"
+authors     = ["Dogukan Metan <dogukanmetan@gmail.com>"]
+license     = "MIT"
+repository  = "https://github.com/oxidized-mc/client-headless"
+homepage    = "https://github.com/oxidized-mc/client-headless"
 rust-version = "1.85"
 
-[workspace.dependencies]
+[dependencies]
 # Shared oxidized-mc crate ecosystem
 oxidized-nbt         = "0.1.0-dev"
 oxidized-codec       = "0.1.0-dev"
@@ -29,52 +23,38 @@ oxidized-types       = "0.1.0-dev"
 oxidized-registry    = "0.1.0-dev"
 
 # Async runtime
-tokio          = { version = "1", features = ["full"] }
-tokio-util     = { version = "0.7", features = ["codec"] }
+tokio       = { version = "1", features = ["full"] }
+tokio-util  = { version = "0.7", features = ["codec"] }
 
 # Serialization
-serde          = { version = "1", features = ["derive"] }
-serde_json     = { version = "1", features = ["preserve_order"] }
-bytes          = "1"
+serde       = { version = "1", features = ["derive"] }
+serde_json  = { version = "1", features = ["preserve_order"] }
+bytes       = "1"
 
 # Logging/tracing
-tracing             = "0.1"
-tracing-subscriber  = { version = "0.3", features = ["env-filter", "fmt"] }
+tracing     = "0.1"
 
 # Networking
-reqwest        = { version = "0.13", features = ["json"] }
-urlencoding    = "2"
-uuid           = { version = "1", features = ["v3", "v4", "serde"] }
+reqwest     = { version = "0.13", features = ["json"] }
+urlencoding = "2"
+uuid        = { version = "1", features = ["v3", "v4", "serde"] }
 
 # Error handling
-thiserror      = "2"
-anyhow         = "1"
+thiserror   = "2"
 
 # Data structures
-indexmap        = { version = "2", features = ["serde"] }
-ahash          = "0.8"
-bitflags       = "2"
-parking_lot    = "0.12"
-dashmap        = "6"
+ahash       = "0.8"
+parking_lot = "0.12"
+dashmap     = "6"
+glam        = "0.32"
 
-# Proc-macro support
-syn            = { version = "2", features = ["full", "extra-traits"] }
-quote          = "1"
-proc-macro2    = "1"
-
-# Math
-glam           = "0.32"
-
-# Testing
-proptest       = "1"
-insta          = { version = "1", features = ["toml"] }
-tempfile       = "3"
-serial_test    = "3"
-criterion      = { version = "0.5", features = ["html_reports"] }
-
-# Internal workspace crates
-oxidized-client-headless-protocol = { path = "crates/oxidized-client-headless-protocol", version = "=0.1.0" }
-oxidized-client-headless-macros   = { path = "crates/oxidized-client-headless-macros", version = "=0.1.0" }
+[dev-dependencies]
+anyhow             = "1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+proptest           = "1"
+insta              = { version = "1", features = ["toml"] }
+tempfile           = "3"
+serial_test        = "3"
 
 [profile.release]
 opt-level     = 3
@@ -89,12 +69,12 @@ opt-level = 1
 inherits  = "release"
 debug     = true
 
-[workspace.lints.rust]
+[lints.rust]
 missing_docs       = "warn"
 unsafe_code        = "deny"
 unused_imports     = "warn"
 
-[workspace.lints.clippy]
+[lints.clippy]
 # Correctness — hard errors
 correctness        = { level = "deny", priority = -1 }
 # Performance and style — warnings
