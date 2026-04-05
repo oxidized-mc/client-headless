@@ -8,6 +8,10 @@ license     = "MIT"
 repository  = "https://github.com/oxidized-mc/client-headless"
 homepage    = "https://github.com/oxidized-mc/client-headless"
 rust-version = "1.85"
+readme      = "README.md"
+documentation = "https://docs.rs/oxidized-client-headless"
+keywords    = ["minecraft", "oxidized-mc"]
+categories  = ["game-development"]
 
 [dependencies]
 # Shared oxidized-mc crate ecosystem

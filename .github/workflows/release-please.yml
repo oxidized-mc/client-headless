@@ -6,8 +6,6 @@ on:
 
 jobs:
   release:
-    # Temporarily disabled — pending refactor before public release
-    if: false
     uses: oxidized-mc/ci/.github/workflows/release-please.yml@main
     permissions:
       contents: write

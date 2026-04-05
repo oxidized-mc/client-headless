@@ -8,11 +8,10 @@ on:
 
 jobs:
   publish:
-    # Temporarily disabled — pending refactor before public release
-    if: false
+    if: >
+      github.event.workflow_run.conclusion == 'success' &&
+      !contains(github.event.workflow_run.head_commit.message, 'chore: release') &&
+      !contains(github.event.workflow_run.head_commit.message, 'chore(release)')
     uses: oxidized-mc/ci/.github/workflows/cargo-publish-dev.yml@main
-    with:
-      packages: |
-        oxidized-client-headless
     secrets:
       CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}

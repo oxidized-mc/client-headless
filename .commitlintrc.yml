@@ -1,4 +1,4 @@
-# commitlint configuration — oxidized-client-headless
+# commitlint configuration — Oxidized
 # https://commitlint.js.org/
 
 rules:
@@ -26,8 +26,7 @@ rules:
   scope-enum:
     - 2
     - always
-    - - macros
-      - protocol
+    - - client-headless
       - ci
       - deps
   scope-case:

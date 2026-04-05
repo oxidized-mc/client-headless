@@ -6,11 +6,6 @@ on:
 
 jobs:
   publish:
-    # Temporarily disabled — pending refactor before public release
-    if: false
     uses: oxidized-mc/ci/.github/workflows/cargo-publish.yml@main
-    with:
-      packages: |
-        oxidized-client-headless
     secrets:
       CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
