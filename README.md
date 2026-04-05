@@ -1,15 +1,15 @@
-# HeadlessCraft
+# oxidized-client-headless
 
 > A Rust framework for building headless Minecraft Java Edition clients — bots, testing tools, and automation.
 
-[![CI](https://github.com/dodoflix/HeadlessCraft/actions/workflows/ci.yml/badge.svg)](https://github.com/dodoflix/HeadlessCraft/actions/workflows/ci.yml)
+[![CI](https://github.com/oxidized-mc/client-headless/actions/workflows/ci.yml/badge.svg)](https://github.com/oxidized-mc/client-headless/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ---
 
-## What is HeadlessCraft?
+## What is oxidized-client-headless?
 
-HeadlessCraft is a Rust library that emulates a Minecraft Java Edition client without rendering.
+oxidized-client-headless is a Rust library that emulates a Minecraft Java Edition client without rendering.
 It connects to vanilla servers, handles the full protocol lifecycle (handshake → login → configuration → play),
 and exposes a high-level API for building:
 
@@ -30,22 +30,22 @@ and exposes a high-level API for building:
 
 ## Architecture
 
-HeadlessCraft is a Cargo workspace with 3 crates:
+oxidized-client-headless is a Cargo workspace with 3 crates:
 
 ```
-headlesscraft-macros    ← no internal deps (proc-macros)
-headlesscraft-protocol  ← macros (packets, codecs, NBT, types, wire format)
-headlesscraft           ← protocol, macros (client logic, world state, bot API)
+oxidized-client-headless-macros    ← no internal deps (proc-macros)
+oxidized-client-headless-protocol  ← macros (packets, codecs, NBT, types, wire format)
+oxidized-client-headless           ← protocol, macros (client logic, world state, bot API)
 ```
 
 Lower-layer crates never depend on higher-layer crates.
 
-Modules within `headlesscraft` (the main crate) handle:
+Modules within `oxidized-client-headless` (the main crate) handle:
 - **client** — connection management, authentication, session handling
 - **world** — client-side world state (chunks, entities, biomes)
 - **bot** — high-level bot behavior API and event system
 
-Modules within `headlesscraft-protocol` handle:
+Modules within `oxidized-client-headless-protocol` handle:
 - **packets** — all packet definitions for every connection state
 - **codec** — VarInt/VarLong, framing, encryption, compression
 - **nbt** — Named Binary Tag serialization
@@ -57,8 +57,8 @@ Modules within `headlesscraft-protocol` handle:
 
 ```bash
 # Clone
-git clone https://github.com/dodoflix/HeadlessCraft.git
-cd HeadlessCraft
+git clone https://github.com/oxidized-mc/client-headless.git
+cd client-headless
 
 # Build
 cargo build
@@ -74,11 +74,11 @@ cargo clippy --workspace --all-targets -- -D warnings
 
 ```toml
 [dependencies]
-headlesscraft = "0.1"
+oxidized-client-headless = "0.1"
 ```
 
 ```rust
-use headlesscraft::Client;
+use oxidized_client_headless::Client;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {

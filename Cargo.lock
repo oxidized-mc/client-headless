@@ -497,64 +497,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100"
 
 [[package]]
-name = "headlesscraft"
-version = "0.1.0"
-dependencies = [
- "ahash",
- "anyhow",
- "bytes",
- "dashmap",
- "glam",
- "headlesscraft-macros",
- "headlesscraft-protocol",
- "insta",
- "oxidized-registry",
- "oxidized-types",
- "parking_lot",
- "proptest",
- "reqwest",
- "serde",
- "serde_json",
- "serial_test",
- "tempfile",
- "thiserror 2.0.18",
- "tokio",
- "tokio-util",
- "tracing",
- "tracing-subscriber",
- "urlencoding",
- "uuid",
-]
-
-[[package]]
-name = "headlesscraft-macros"
-version = "0.1.0"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
-]
-
-[[package]]
-name = "headlesscraft-protocol"
-version = "0.1.0"
-dependencies = [
- "bitflags",
- "bytes",
- "glam",
- "headlesscraft-macros",
- "indexmap",
- "insta",
- "proptest",
- "serde",
- "serde_json",
- "tempfile",
- "thiserror 2.0.18",
- "tracing",
- "uuid",
-]
-
-[[package]]
 name = "heck"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1017,6 +959,64 @@ name = "openssl-probe"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7c87def4c32ab89d880effc9e097653c8da5d6ef28e6b539d313baaacfbafcbe"
+
+[[package]]
+name = "oxidized-client-headless"
+version = "0.1.0"
+dependencies = [
+ "ahash",
+ "anyhow",
+ "bytes",
+ "dashmap",
+ "glam",
+ "insta",
+ "oxidized-client-headless-macros",
+ "oxidized-client-headless-protocol",
+ "oxidized-registry",
+ "oxidized-types",
+ "parking_lot",
+ "proptest",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "serial_test",
+ "tempfile",
+ "thiserror 2.0.18",
+ "tokio",
+ "tokio-util",
+ "tracing",
+ "tracing-subscriber",
+ "urlencoding",
+ "uuid",
+]
+
+[[package]]
+name = "oxidized-client-headless-macros"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "oxidized-client-headless-protocol"
+version = "0.1.0"
+dependencies = [
+ "bitflags",
+ "bytes",
+ "glam",
+ "indexmap",
+ "insta",
+ "oxidized-client-headless-macros",
+ "proptest",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "thiserror 2.0.18",
+ "tracing",
+ "uuid",
+]
 
 [[package]]
 name = "oxidized-registry"

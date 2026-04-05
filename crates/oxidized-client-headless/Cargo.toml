@@ -1,5 +1,5 @@
 [package]
-name        = "headlesscraft"
+name        = "oxidized-client-headless"
 description = "A Rust framework for headless Minecraft Java Edition clients — bots, testing, and automation"
 version.workspace      = true
 edition.workspace      = true
@@ -10,8 +10,8 @@ homepage.workspace     = true
 rust-version.workspace = true
 
 [dependencies]
-headlesscraft-protocol = { workspace = true }
-headlesscraft-macros   = { workspace = true }
+oxidized-client-headless-protocol = { workspace = true }
+oxidized-client-headless-macros   = { workspace = true }
 
 # Shared oxidized-mc crates (client logic layer)
 oxidized-registry  = { workspace = true }

@@ -17,7 +17,7 @@
   ],
   "packages": {
     ".": {
-      "component": "headlesscraft",
+      "component": "oxidized-client-headless",
       "changelog-path": "CHANGELOG.md",
       "extra-files": [
         {

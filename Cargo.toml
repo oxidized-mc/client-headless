@@ -1,8 +1,8 @@
 [workspace]
 members = [
-    "crates/headlesscraft",
-    "crates/headlesscraft-protocol",
-    "crates/headlesscraft-macros",
+    "crates/oxidized-client-headless",
+    "crates/oxidized-client-headless-protocol",
+    "crates/oxidized-client-headless-macros",
 ]
 resolver = "2"
 
@@ -11,8 +11,8 @@ version      = "0.1.0" # x-release-please-version
 edition      = "2024"
 authors      = ["Dogukan Metan <dogukanmetan@gmail.com>"]
 license      = "MIT"
-repository   = "https://github.com/dodoflix/HeadlessCraft"
-homepage     = "https://github.com/dodoflix/HeadlessCraft"
+repository   = "https://github.com/oxidized-mc/client-headless"
+homepage     = "https://github.com/oxidized-mc/client-headless"
 rust-version = "1.85"
 
 [workspace.dependencies]
@@ -73,8 +73,8 @@ serial_test    = "3"
 criterion      = { version = "0.5", features = ["html_reports"] }
 
 # Internal workspace crates
-headlesscraft-protocol = { path = "crates/headlesscraft-protocol", version = "=0.1.0" }
-headlesscraft-macros   = { path = "crates/headlesscraft-macros", version = "=0.1.0" }
+oxidized-client-headless-protocol = { path = "crates/oxidized-client-headless-protocol", version = "=0.1.0" }
+oxidized-client-headless-macros   = { path = "crates/oxidized-client-headless-macros", version = "=0.1.0" }
 
 [profile.release]
 opt-level     = 3

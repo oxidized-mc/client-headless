@@ -1,4 +1,4 @@
-# Contributing to HeadlessCraft
+# Contributing to oxidized-client-headless
 
 Thank you for your interest in contributing! This document explains the process.
 
@@ -29,7 +29,7 @@ Be respectful and constructive.
 
 ## Development Lifecycle
 
-Every change in HeadlessCraft follows a structured lifecycle:
+Every change in oxidized-client-headless follows a structured lifecycle:
 
 ```
 Identify → Research → Decide → Plan → Test First → Implement → Review → Integrate → Retrospect
@@ -62,8 +62,8 @@ For trivial changes (typo fixes, dependency bumps), an abbreviated lifecycle app
 
 ```bash
 # 1. Fork and clone
-git clone https://github.com/dodoflix/HeadlessCraft.git
-cd HeadlessCraft
+git clone https://github.com/oxidized-mc/client-headless.git
+cd client-headless
 
 # 2. Rust stable (toolchain pinned via rust-toolchain.toml)
 rustup update stable
@@ -95,12 +95,12 @@ The workspace has three crates — keep concerns separated:
 
 | Crate | Responsibility | Must NOT depend on |
 |---|---|---|
-| `headlesscraft-macros` | Proc-macro derives | all other headlesscraft crates |
-| `headlesscraft-protocol` | Packet codec, NBT, types, wire format | `headlesscraft` |
-| `headlesscraft` | Client logic, world state, bot API | — (depends on protocol, macros) |
+| `oxidized-client-headless-macros` | Proc-macro derives | all other oxidized-client-headless crates |
+| `oxidized-client-headless-protocol` | Packet codec, NBT, types, wire format | `oxidized-client-headless` |
+| `oxidized-client-headless` | Client logic, world state, bot API | — (depends on protocol, macros) |
 
-Modules within the main `headlesscraft` crate handle client connection, world state,
-and bot behavior. Modules within `headlesscraft-protocol` handle packets, codecs,
+Modules within the main `oxidized-client-headless` crate handle client connection, world state,
+and bot behavior. Modules within `oxidized-client-headless-protocol` handle packets, codecs,
 NBT serialization, and shared types.
 
 **Reference code:** The decompiled vanilla client/server lives in `mc-server-ref/decompiled/`
@@ -205,7 +205,7 @@ cargo bench --workspace
 
 ## Release Process
 
-HeadlessCraft uses automated versioning and release management based on conventional commits.
+oxidized-client-headless uses automated versioning and release management based on conventional commits.
 
 ### How It Works
 

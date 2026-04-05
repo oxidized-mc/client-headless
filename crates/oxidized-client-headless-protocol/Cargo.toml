@@ -1,6 +1,6 @@
 [package]
-name        = "headlesscraft-protocol"
-description = "Minecraft Java Edition protocol codec, packet definitions, and NBT for HeadlessCraft"
+name        = "oxidized-client-headless-protocol"
+description = "Minecraft Java Edition protocol codec, packet definitions, and NBT for oxidized-client-headless"
 version.workspace      = true
 edition.workspace      = true
 authors.workspace      = true
@@ -9,7 +9,7 @@ repository.workspace   = true
 rust-version.workspace = true
 
 [dependencies]
-headlesscraft-macros = { workspace = true }
+oxidized-client-headless-macros = { workspace = true }
 
 # Serialization & types
 bytes       = { workspace = true }

@@ -1,11 +1,11 @@
-# git-cliff configuration — HeadlessCraft
+# git-cliff configuration — oxidized-client-headless
 # https://git-cliff.org/docs/configuration
 
 [changelog]
 # Template for the full changelog
 header = """# Changelog
 
-All notable changes to HeadlessCraft will be documented in this file.
+All notable changes to oxidized-client-headless will be documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -14,7 +14,7 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 """
 body = """
 {%- macro remote_url() -%}
-  https://github.com/dodoflix/HeadlessCraft
+  https://github.com/oxidized-mc/client-headless
 {%- endmacro -%}
 
 {% if version -%}
@@ -43,7 +43,7 @@ body = """
 """
 footer = """
 {%- macro remote_url() -%}
-  https://github.com/dodoflix/HeadlessCraft
+  https://github.com/oxidized-mc/client-headless
 {%- endmacro -%}
 
 {% for release in releases -%}

@@ -1,8 +1,8 @@
-//! # HeadlessCraft
+//! # oxidized-client-headless
 //!
 //! A Rust framework for building headless Minecraft Java Edition clients.
 //!
-//! HeadlessCraft connects to vanilla servers, handles the full protocol lifecycle
+//! oxidized-client-headless connects to vanilla servers, handles the full protocol lifecycle
 //! (handshake → login → configuration → play), and exposes a high-level API for
 //! building bots, testing tools, stress testers, and automation.
 //!
@@ -22,7 +22,7 @@
 //! ## Quick Start
 //!
 //! ```rust,no_run
-//! use headlesscraft::Client;
+//! use oxidized_client_headless::Client;
 //!
 //! #[tokio::main]
 //! async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
@@ -39,7 +39,7 @@
 //!
 //! ## Modules
 //!
-//! - [`protocol`] — Re-export of `headlesscraft-protocol` (packets, codecs, NBT, types, chat)
+//! - [`protocol`] — Re-export of `oxidized-client-headless-protocol` (packets, codecs, NBT, types, chat)
 //! - `client` — Connection management, authentication, session handling (TODO)
 //! - `world` — Client-side world state tracking (TODO)
 //! - `bot` — High-level bot behavior API (TODO)
@@ -47,7 +47,7 @@
 #![deny(unsafe_code)]
 
 /// Protocol layer — packets, codecs, NBT, types, chat.
-pub use headlesscraft_protocol as protocol;
+pub use oxidized_client_headless_protocol as protocol;
 
 /// Placeholder for the high-level `Client` builder.
 ///

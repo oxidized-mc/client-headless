@@ -1,4 +1,4 @@
-//! Minecraft Java Edition protocol codec, packet definitions, and NBT for HeadlessCraft.
+//! Minecraft Java Edition protocol codec, packet definitions, and NBT for oxidized-client-headless.
 //!
 //! This crate handles the wire protocol from the client perspective:
 //!

@@ -1,6 +1,6 @@
 [package]
-name        = "headlesscraft-macros"
-description = "Proc-macro derives for HeadlessCraft"
+name        = "oxidized-client-headless-macros"
+description = "Proc-macro derives for oxidized-client-headless"
 version.workspace      = true
 edition.workspace      = true
 authors.workspace      = true

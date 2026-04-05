@@ -13,9 +13,9 @@ body:
     attributes:
       label: Affected crate
       options:
-        - headlesscraft
-        - headlesscraft-protocol
-        - headlesscraft-macros
+        - oxidized-client-headless
+        - oxidized-client-headless-protocol
+        - oxidized-client-headless-macros
         - Unknown / multiple
     validations:
       required: true
@@ -23,7 +23,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: HeadlessCraft version / commit
+      label: oxidized-client-headless version / commit
       placeholder: "e.g. main@abc1234 or 0.1.0"
     validations:
       required: true
