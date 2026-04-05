@@ -11,12 +11,6 @@ rust-version.workspace = true
 [dependencies]
 headlesscraft-macros = { workspace = true }
 
-# Shared oxidized-mc crates (wire-format primitives)
-oxidized-codec    = { workspace = true }
-oxidized-nbt      = { workspace = true }
-oxidized-mc-types = { workspace = true }
-oxidized-chat     = { workspace = true }
-
 # Serialization & types
 bytes       = { workspace = true }
 thiserror   = { workspace = true }

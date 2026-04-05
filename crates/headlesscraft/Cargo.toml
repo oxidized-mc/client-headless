@@ -14,8 +14,6 @@ headlesscraft-protocol = { workspace = true }
 headlesscraft-macros   = { workspace = true }
 
 # Shared oxidized-mc crates (client logic layer)
-oxidized-transport = { workspace = true }
-oxidized-auth      = { workspace = true }
 oxidized-registry  = { workspace = true }
 oxidized-types     = { workspace = true }
 

@@ -10,14 +10,14 @@
 //!
 //! Low-level protocol primitives (codec, NBT, types, chat, crypto, compression)
 //! are provided by the [`oxidized-mc`](https://github.com/oxidized-mc) crate
-//! ecosystem, shared with the Oxidized server. Access them via [`protocol`]:
+//! ecosystem, shared with the Oxidized server:
 //!
-//! - [`protocol::codec`] — VarInt/VarLong, wire-format readers/writers
-//! - [`protocol::nbt`] — Named Binary Tag serialization
-//! - [`protocol::types`] — `BlockPos`, `ResourceLocation`, coordinate types
-//! - [`protocol::chat`] — Chat components, formatting, events
-//! - [`transport`] — Connection state machine, framing, encryption, compression
-//! - [`auth`] — `GameProfile`, `ProfileProperty`, Mojang session verification
+//! - [`oxidized_codec`] — VarInt/VarLong, wire-format readers/writers
+//! - [`oxidized_nbt`] — Named Binary Tag serialization
+//! - [`oxidized_mc_types`] — `BlockPos`, `ResourceLocation`, coordinate types
+//! - [`oxidized_chat`] — Chat components, formatting, events
+//! - [`oxidized_transport`] — Connection state machine, framing, encryption, compression
+//! - [`oxidized_auth`] — `GameProfile`, `ProfileProperty`, Mojang session verification
 //!
 //! ## Quick Start
 //!
@@ -40,8 +40,6 @@
 //! ## Modules
 //!
 //! - [`protocol`] — Re-export of `headlesscraft-protocol` (packets, codecs, NBT, types, chat)
-//! - [`transport`] — Connection state machine, async reader/writer, framing pipeline
-//! - [`auth`] — Game profile types and Mojang session authentication
 //! - `client` — Connection management, authentication, session handling (TODO)
 //! - `world` — Client-side world state tracking (TODO)
 //! - `bot` — High-level bot behavior API (TODO)
@@ -50,12 +48,6 @@
 
 /// Protocol layer — packets, codecs, NBT, types, chat.
 pub use headlesscraft_protocol as protocol;
-
-/// Transport layer — connection state machine, framing, encryption, compression.
-pub use oxidized_transport as transport;
-
-/// Authentication — `GameProfile`, `ProfileProperty`, Mojang session verification.
-pub use oxidized_auth as auth;
 
 /// Placeholder for the high-level `Client` builder.
 ///
