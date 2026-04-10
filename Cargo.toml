@@ -17,7 +17,7 @@ categories  = ["game-development"]
 # Shared oxidized-mc crate ecosystem
 oxidized-nbt         = "0.1.0-dev"
 oxidized-codec       = "0.1.0-dev"
-oxidized-mc-types    = "0.1.0-dev"
+oxidized-mc-types    = "0.2"
 oxidized-chat        = "0.1.0-dev"
 oxidized-crypto      = "0.1.0-dev"
 oxidized-compression = "0.1.0-dev"
@@ -100,15 +100,3 @@ must_use_candidate      = "allow"
 cast_possible_truncation = "allow"
 cast_sign_loss           = "allow"
 cast_possible_wrap       = "allow"
-
-[patch.crates-io]
-oxidized-auth = { path = "../auth" }
-oxidized-chat = { path = "../chat" }
-oxidized-codec = { path = "../codec" }
-oxidized-compression = { path = "../compression" }
-oxidized-crypto = { path = "../crypto" }
-oxidized-mc-types = { path = "../mc-types" }
-oxidized-nbt = { path = "../nbt" }
-oxidized-registry = { path = "../registry" }
-oxidized-transport = { path = "../transport" }
-oxidized-types = { path = "../types" }
