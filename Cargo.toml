@@ -1,7 +1,7 @@
 [package]
 name        = "oxidized-client-headless"
 description = "A Rust framework for headless Minecraft Java Edition clients — bots, testing, and automation"
-version     = "0.1.0" # x-release-please-version
+version     = "0.2.0" # x-release-please-version
 edition     = "2024"
 authors     = ["Dogukan Metan <dogukanmetan@gmail.com>"]
 license     = "MIT"
